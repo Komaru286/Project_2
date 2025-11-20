@@ -1,0 +1,1 @@
+SELECT id AS object_id, pizza_name AS object_name FROM menu UNION ALL SELECT id AS object_id, name AS object_name FROM people ORDER BY object_id, object_id, object_name;

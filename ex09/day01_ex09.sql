@@ -1,0 +1,2 @@
+SELECT name FROM pizzeria WHERE id NOT IN (SELECT pizzeria_id FROM person_visits WHERE pizzeria_id IS NOT NULL);
+SELECT p.name FROM pizzeria AS p WHERE NOT EXISTS (SELECT 1 FROM person_visits AS v WHERE v.pizzeria_id = p.id);
