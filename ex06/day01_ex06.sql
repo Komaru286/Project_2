@@ -1,1 +1,1 @@
-SELECT po.order_date AS action_date, (SELECT name FROM person WHERE id = po.person_id) AS person_name FROM person_order AS po WHERE EXISTS (SELECT 1 FROM person_visits AS pv WHERE pv.person_id = po.person_id AND pv.visit_date = po.order_date) ORDER BY action_date ASC, person_name DESC;
+SELECT o.order_date AS action_date, p.name AS person_name FROM person_order o JOIN person p ON o.person_id = p.id WHERE o.order_date = v.visit_date ORDER BY action_date ASC, person_name DESC;           

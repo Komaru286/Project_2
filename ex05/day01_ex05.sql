@@ -1,1 +1,1 @@
-SELECT * FROM person CROSS JOIN pizzeria ORDER BY person.id, pizzeria.id;
+SELECT p.id AS person_id, p.name AS person_name, p.age, p.gender, p.address, pr.id AS pizzeria_id, pr.name AS pizzeria_name, pr.rating FROM person p CROSS JOIN pizzeria pr ORDER BY p.id ASC, pr.id ASC;
